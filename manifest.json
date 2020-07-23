@@ -1,0 +1,19 @@
+{
+  "name": "MyIpChromeExt",
+  "version": "0.1",
+  "description": "Find out your ip address!",
+  "icons": { "16": "icon.png" },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_idle",
+      "js": ["content.js"]
+    }
+  ],
+  "permissions": ["https://api.myip.com/"],
+  "manifest_version": 2
+}
